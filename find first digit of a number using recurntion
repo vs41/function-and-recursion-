@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+int calFirstDigitOfNum(int num){
+    
+    if(num/10==0){
+        return num;
+        
+    }else{
+        num=num/10;
+        calFirstDigitOfNum(num);
+    }
+    
+    
+    
+}
+
+int main()
+{
+    int num;
+    cin>>num;
+    cout<<calFirstDigitOfNum(num);
+    return 0;
+}
