@@ -1,65 +1,32 @@
 /******************************************************************************
 
-Welcome to GDB Online.
-GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
-C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
-Code, Compile, Run and Debug online from anywhere in world.
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
 
 *******************************************************************************/
+
 #include <iostream>
 
 using namespace std;
-// this function is used to calculate mcd
-int i=2;
-int calGCD(int num1,int num2, int temp,int i){ //20 100 1 2 10 50 2 2 5 50 4 3 4 5
-    if((num1==i)&&(num2==i)){   //false false flase
-          
-           cout<<"\n";
-        
+int calFirstDigitOfNum(int num){
     
-            return(temp*i);
-       
+    if(num/10==0){
+        return num;
         
-    }else if((num1==i)&&(num2!=i))
-      if(num2%i==0)
-        return (temp*i);
-      else
-         return temp;
-     else if((num1!=i)&&(num2==i)){
-        if(num1%i==0)
-        return (temp*i);
-      else
-         return temp;
-     }else{   
-        if((num1%i==0)&&(num2%i==0)){ 
-            cout<<" ";
-            temp=temp*i; //2 4
-            num1=num1/i;
-            num2=num2/i;
-            if((num1%i==0) && (num2%i==0)){ 
-                calGCD(num1,num2,temp,i);
-            }else{
-               calGCD(num1,num2,temp,(i+1)); 
-            }
-            
-        }else{
-            
-         calGCD(num1,num2,temp,(i+1)); 
-        
-         
-        }   
+    }else{
+        num=num/10;
+        calFirstDigitOfNum(num);
+    }
     
-     }
+    
     
 }
 
 int main()
 {
-    int num1, num2;
-    int temp=1;
-    cout<<"please enter num1 and num2 ";
-    cin>>num1>>num2; 
-    cout<<calGCD(num1,num2 , temp,i); 
-
+    int num;
+    cin>>num;
+    cout<<calFirstDigitOfNum(num);
     return 0;
 }
