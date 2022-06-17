@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   long int num;
+    cout<<"please enter the number ";
+    cin>>num;
+    for(int i=1; i<30;i++){
+        if(num/10==0){
+            cout<<i;
+            break;
+        }else
+           num=(num/10);
+        
+        
+        
+    }
+
+    return 0;
+}
