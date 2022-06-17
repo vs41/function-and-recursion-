@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+void numTable(int num, int i){
+    
+    
+    if(i<=10){
+        
+        cout<<num*i;
+        numTable(num, ++i);
+        
+    }else
+    return;
+    
+    
+    
+    
+    
+}
+
+int main()
+{
+    int num;
+    cin>>num;
+   int i=1;
+    numTable(num ,i);
+
+    return 0;
+}
+
