@@ -1,44 +1,65 @@
 /******************************************************************************
 
-                              Online C++ Compiler.
-               Code, Compile, Run and Debug C++ program online.
-Write your code in this editor and press "Run" button to compile and execute it.
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
 
 *******************************************************************************/
-
 #include <iostream>
 
 using namespace std;
-//fuction for calculating factor of a given number
-void factor(int num, int x){
-   //condition for stop the recursion  
-    int temp =num;
-    if(temp/x==0){
-    
-        return;
+// this function is used to calculate mcd
+int i=2;
+int calGCD(int num1,int num2, int temp,int i){ //20 100 1 2 10 50 2 2 5 50 4 3 4 5
+    if((num1==i)&&(num2==i)){   //false false flase
+          
+           cout<<"\n";
         
-    }else{
-    if (num%x==0){
-        cout<<x;
-        num=num/x;
-        factor(num ,x);
+    
+            return(temp*i);
+       
         
-    }else
-      factor(num,(x+1));
+    }else if((num1==i)&&(num2!=i))
+      if(num2%i==0)
+        return (temp*i);
+      else
+         return temp;
+     else if((num1!=i)&&(num2==i)){
+        if(num1%i==0)
+        return (temp*i);
+      else
+         return temp;
+     }else{   
+        if((num1%i==0)&&(num2%i==0)){ 
+            cout<<" ";
+            temp=temp*i; //2 4
+            num1=num1/i;
+            num2=num2/i;
+            if((num1%i==0) && (num2%i==0)){ 
+                calGCD(num1,num2,temp,i);
+            }else{
+               calGCD(num1,num2,temp,(i+1)); 
+            }
+            
+        }else{
+            
+         calGCD(num1,num2,temp,(i+1)); 
+        
+         
+        }   
     
-    }
-    
-    
-    
-    
+     }
     
 }
+
 int main()
 {
-    int num;
-    int x=2;
-    cin>>num;
-    factor(num,x);
+    int num1, num2;
+    int temp=1;
+    cout<<"please enter num1 and num2 ";
+    cin>>num1>>num2; 
+    cout<<calGCD(num1,num2 , temp,i); 
 
     return 0;
 }
