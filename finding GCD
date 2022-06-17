@@ -1,0 +1,58 @@
+#include <iostream>
+
+using namespace std;
+// this function is used to calculate mcd
+int i=2;
+int calGCD(int num1,int num2, int temp,int i){ //20 100 1 2 10 50 2 2 5 50 4 3 4 5
+    if((num1==i)&&(num2==i)){   //false false flase
+          
+           cout<<"\n";
+        
+    
+            return(temp*i);
+       
+        
+    }else if((num1==i)&&(num2!=i))
+      if(num2%i==0)
+        return (temp*i);
+      else
+         return temp;
+     else if((num1!=i)&&(num2==i)){
+        if(num1%i==0)
+        return (temp*i);
+      else
+         return temp;
+     }else{   
+        if((num1%i==0)&&(num2%i==0)){ 
+            cout<<" ";
+            temp=temp*i; //2 4
+            num1=num1/i;
+            num2=num2/i;
+            if((num1%i==0) && (num2%i==0)){ 
+                calGCD(num1,num2,temp,i);
+            }else{
+               calGCD(num1,num2,temp,(i+1)); 
+            }
+            
+        }else{
+            
+         calGCD(num1,num2,temp,(i+1)); 
+        
+         
+        }   
+    
+     }
+    
+}
+
+int main()
+{
+    int num1, num2;
+    int temp=1;
+    cout<<"please enter num1 and num2 ";
+    cin>>num1>>num2; 
+    cout<<calGCD(num1,num2 , temp,i); 
+
+    return 0;
+}
+
