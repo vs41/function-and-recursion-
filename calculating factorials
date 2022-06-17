@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+//function for calculating the factorial
+int calFact(int num, int temp){
+       if(num==1){
+           
+           return temp;
+       }
+       else{
+           
+           temp=temp*num;
+           calFact((num-1),temp);
+       }
+    
+    
+    
+    
+}
+
+int main()
+{
+    int num;
+    cout<<"please enter the number for calculating factorial ";
+    cin>>num;
+    int temp=1;
+    cout<<calFact(num , temp);
+    
+
+    return 0;
+}
